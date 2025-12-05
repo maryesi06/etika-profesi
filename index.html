@@ -6,85 +6,112 @@
     <title>Laporan Fake Brand Indonesia – Maryesi Telussa</title>
 
     <style>
-    body {
-        font-family: "Poppins", Arial, sans-serif;
-        background: #0e0e0e; /* Hitam elegan */
-        margin: 0;
-        padding: 20px;
-        color: #f2f2f2;
-    }
+/* ========== BASE STYLE ========== */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #0e0e0e;
+    margin: 0;
+    padding: 20px;
+    color: #f2f2f2;
 
-    .card {
+    /* Responsive font */
+    font-size: clamp(14px, 1.2vw, 18px);
+}
+
+/* ========== CARD CONTAINER ========== */
+.card {
     background: #151515;
-    padding: 25px;
-    margin: 25px auto; /* agar center */
+    padding: clamp(18px, 3vw, 30px);
+    margin: 25px auto;
+
     border-radius: 14px;
     border: 1px solid #d4af37;
     box-shadow: 0 4px 12px rgba(212,175,55,0.25);
 
-    /* BAGIAN PENTING UNTUK MENGISI RUANG */
-    width: 90%;         /* isi hampir seluruh layar */
-    max-width: 1200px;  /* supaya tetap rapi dan premium */
+    /* FLEXIBEL RESPONSIVE */
+    width: min(95%, 1100px); 
 }
 
-    h2, h3 {
-        text-align: center;
-        margin-top: 0;
-        color: #d4af37; /* Gold */
-        text-shadow: 0 0 8px rgba(212,175,55,0.55);
-        letter-spacing: 1px;
+/* ========== HEADINGS ========== */
+h2, h3 {
+    text-align: center;
+    margin-top: 0;
+    color: #d4af37;
+    text-shadow: 0 0 8px rgba(212,175,55,0.55);
+    letter-spacing: 1px;
+
+    /* Responsive font size */
+    font-size: clamp(20px, 2.2vw, 32px);
+}
+
+/* ========== TEXT ========== */
+ul li, p {
+    color: #e6e6e6;
+    line-height: 1.7;
+    font-size: clamp(14px, 1.4vw, 18px);
+}
+
+ul { margin-top: 6px; }
+
+/* ========== IMAGES ========== */
+.product-images {
+    display: flex;
+    flex-wrap: wrap;       /* penting supaya tidak overflow di HP */
+    justify-content: center;
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.product-images img {
+    width: clamp(140px, 30vw, 260px); /* otomatis mengecil di HP */
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212,175,55,0.45);
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.image-label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #d4af37;
+    color: #000;
+    padding: 5px 12px;
+    font-size: clamp(10px, 1.4vw, 14px);
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 0 0 6px rgba(212,175,55,0.6);
+}
+
+/* ========== LINKS ========== */
+a { 
+    color: #d4af37;
+    font-weight: bold;
+}
+a:hover {
+    color: #f7e7a6;
+    text-shadow: 0 0 6px rgba(255,215,0,0.6);
+}
+
+/* ========== MOBILE OPTIMIZATION ========== */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
     }
 
-    ul li, p {
-        color: #e6e6e6;
-        line-height: 1.6;
+    .card {
+        padding: 18px;
     }
 
-    .product-images {
-        display: flex;
-        justify-content: center;
-        gap: 14px;
-        margin: 20px 0;
+    ul li {
+        margin-left: 5px;
     }
+}
 
-    .image-wrapper {
-        position: relative;
-    }
-
-    .product-images img {
-        width: 260px;
-        height: auto;
-        border-radius: 12px;
-        border: 2px solid #d4af37;
-        box-shadow: 0 0 10px rgba(212,175,55,0.45);
-    }
-
-    .image-label {
-        position: absolute;
-        top: 8px;
-        left: 8px;
-        background: #d4af37;
-        color: #000;
-        padding: 5px 12px;
-        font-size: 14px;
-        border-radius: 6px;
-        font-weight: bold;
-        box-shadow: 0 0 6px rgba(212,175,55,0.6);
-    }
-
-    a { 
-        color: #d4af37;
-        font-weight: bold;
-    }
-
-    a:hover {
-        color: #f7e7a6;
-        text-shadow: 0 0 6px rgba(255,215,0,0.6);
-    }
-
-    ul { 
-        margin-top: 6px; 
-    }
 </style>
 
 </head>
