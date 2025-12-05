@@ -1,162 +1,769 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HBD My Love</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Fake Brand Indonesia – Maryesi Telussa</title>
+
     <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #1a1a1a;
-            font-family: Arial, sans-serif;
-            color: white;
-            overflow: hidden;
-        }
+/* ========== BASE STYLE ========== */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #0e0e0e;
+    margin: 0;
+    padding: 20px;
+    color: #f2f2f2;
 
-        /* Container */
-        .container {
-            text-align: center;
-            animation: fadeIn 2s ease forwards;
-            opacity: 0;
-        }
+    /* Responsive font */
+    font-size: clamp(14px, 1.2vw, 18px);
+}
 
-        /* Photo */
-        .photo {
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 20px;
-            border: 6px solid #ff4d6d;
-            box-shadow: 0 0 25px #ff4d6d;
-            animation: glow 2s infinite alternate ease-in-out, zoomIn 1.4s ease forwards;
-        }
+/* ========== CARD CONTAINER ========== */
+.card {
+    background: #151515;
+    padding: clamp(18px, 3vw, 30px);
+    margin: 25px auto;
 
-        .photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    border-radius: 14px;
+    border: 1px solid #d4af37;
+    box-shadow: 0 4px 12px rgba(212,175,55,0.25);
 
-        /* Title */
-        h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            animation: slideDown 1.4s ease forwards;
-            opacity: 0;
-        }
+    /* FLEXIBEL RESPONSIVE */
+    width: min(95%, 1100px); 
+}
 
-        p {
-            font-size: 18px;
-            opacity: 0;
-            animation: fadeIn 2s ease forwards 0.5s;
-        }
+/* ========== HEADINGS ========== */
+h2, h3 {
+    text-align: center;
+    margin-top: 0;
+    color: #d4af37;
+    text-shadow: 0 0 8px rgba(212,175,55,0.55);
+    letter-spacing: 1px;
 
-        /* BUTTON */
-        .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 26px;
-            font-size: 18px;
-            background: #ff4d6d;
-            border-radius: 30px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 0 15px #ff4d6d;
-            transition: 0.3s;
-            animation: fadeIn 2.5s ease forwards 1s;
-            opacity: 0;
-        }
+    /* Responsive font size */
+    font-size: clamp(20px, 2.2vw, 32px);
+}
 
-        .btn:hover {
-            background: #ff3358;
-            transform: scale(1.1);
-            box-shadow: 0 0 25px #ff4d6d;
-        }
+/* ========== TEXT ========== */
+ul li, p {
+    color: #e6e6e6;
+    line-height: 1.7;
+    font-size: clamp(14px, 1.4vw, 18px);
+}
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+ul { margin-top: 6px; }
 
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+/* ========== IMAGES ========== */
+.product-images {
+    display: flex;
+    flex-wrap: wrap;       /* penting supaya tidak overflow di HP */
+    justify-content: center;
+    gap: 14px;
+    margin: 20px 0;
+}
 
-        @keyframes zoomIn {
-            0% { transform: scale(0.4); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
+.product-images img {
+    width: clamp(140px, 30vw, 260px); /* otomatis mengecil di HP */
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212,175,55,0.45);
+}
 
-        @keyframes glow {
-            from { box-shadow: 0 0 15px #ff4d6d; }
-            to { box-shadow: 0 0 35px #ff4d6d; }
-        }
+.image-wrapper {
+    position: relative;
+}
 
-        /* Floating hearts */
-        .heart {
-            position: fixed;
-            color: #ff4d6d;
-            font-size: 22px;
-            animation: floatUp 5s linear infinite;
-            opacity: 0.7;
-        }
+.image-label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #d4af37;
+    color: #000;
+    padding: 5px 12px;
+    font-size: clamp(10px, 1.4vw, 14px);
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 0 0 6px rgba(212,175,55,0.6);
+}
 
-        @keyframes floatUp {
-            from {
-                transform: translateY(0);
-                opacity: 0.8;
-            }
-            to {
-                transform: translateY(-800px);
-                opacity: 0;
-            }
-        }
-    </style>
+/* ========== LINKS ========== */
+a { 
+    color: #d4af37;
+    font-weight: bold;
+}
+a:hover {
+    color: #f7e7a6;
+    text-shadow: 0 0 6px rgba(255,215,0,0.6);
+}
+
+/* ========== MOBILE OPTIMIZATION ========== */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    ul li {
+        margin-left: 5px;
+    }
+}
+
+</style>
+
 </head>
 <body>
 
-    <div class="container">
-        <div class="photo">
-            <img src="your-photo.jpg" alt="Photo">
+<!-- ====================== COVER ====================== -->
+<div class="card">
+    <h2>MIRROR Brand</h2>
+
+    <p style="text-align:center;">
+        <b>Mata Kuliah:</b> Etika Profesi<br>
+        <b>Nama :</b> Maryesi Telussa<br>
+        <b>NIM :</b> 202351010<br>
+        <b>Dosen Pengampu:</b> Ibu Citra Fathia Palembang, S.Kom., M.Kom.
+    </p>
+</div>
+
+<!-- ====================== DAFTAR ISI ====================== -->
+<div class="card">
+    <h3>Daftar Isi</h3>
+    <ul>
+        <li>1. Tas Balenciaga – Fake vs Real</li>
+        <li>2. Sepatu Nike Air Max</li>
+        <li>3. Sepatu Adidas Samba</li>
+        <li>4. Tas Louis Vuitton</li>
+        <li>5. Tas Wanita Bordir Kotak</li>
+        <li>6. Fujika Tas</li>
+        <li>7. Tas Selempang</li>
+        <li>8. Tas Louis Vuitton (versi lain)</li>
+        <li>9. Scarlett Whitening Perfume</li>
+        <li>10. Coklat “Dubai”</li>
+        <li>11. Dampak Pelanggaran Merek</li>
+        <li>12. Kesimpulan Nasional Fake Brand</li>
+        <li>13. Rekomendasi Solusi Hukum</li>
+        <li>14. Daftar Referensi</li>
+    </ul>
+</div>
+
+<!-- ====================== PRODUK 1 BALENCIAGA ====================== -->
+<div class="card">
+    <h3>Tas Balenciaga</h3>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="img/balenciaga_real.jpg">
         </div>
-
-        <h1>Happy Birthday My Sayang ❤️</h1>
-
-        <p>
-            Semoga kamu selalu bahagia, sehat, dan makin cantik setiap hari.  
-            Aku selalu bangga punya kamu.  
-            I love you sayangku. 💕
-        </p>
-
-        <a class="btn" href="#">Klik di sini sayang ❤️</a>
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="img/balenciaga_fake.jpg">
+        </div>
     </div>
 
-    <script>
-        // Floating hearts effect
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "❤️";
-            heart.style.left = Math.random() * window.innerWidth + "px";
-            heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-            heart.style.fontSize = (18 + Math.random() * 20) + "px";
-            document.body.appendChild(heart);
+    <p><b>Kategori:</b> Fake Branded / Barang Tiruan</p>
 
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
+    <p><b>Persamaan Pada Pokoknya:</b></p>
+    <ul>
+        <li>Awalan kata “Balen–” mirip dengan “Balenciaga”.</li>
+        <li>Rima pengucapan serupa.</li>
+        <li>Brand impression sengaja dibuat mirip.</li>
+    </ul>
 
-        setInterval(createHeart, 350);
-    </script>
+    <p><b>Elemen Ditiru:</b></p>
+    <ul>
+        <li>Pola pengucapan.</li>
+        <li>Elemen branding.</li>
+        <li>Asosiasi dengan brand Balenciaga.</li>
+    </ul>
+
+    <p><b>Dampak Bagi Brand Asli:</b></p>
+    <ul>
+        <li>Kerugian finansial.</li>
+        <li>Reputasi menurun.</li>
+        <li>Brand dilution.</li>
+    </ul>
+
+    <p><b>Pasal Terkait:</b> Pasal 4, 6(1), 76, 83, 90–92, 94</p>
+</div>
+
+<!-- ====================== PRODUK 2 NIKE ====================== -->
+<div class="card">
+    <h3>Sepatu Nike Air Max</h3>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="img/nike_real.jpg">
+        </div>
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="img/nike_fake.jpg">
+        </div>
+    </div>
+
+    <p><b>Kategori:</b> Fake Brand / Imitasi</p>
+
+    <p><b>Persamaan Pada Pokoknya:</b></p>
+    <ul>
+        <li>Bentuk tas sangat mirip</li>
+        <li>Penempatan studs, strap, dan aksesoris sama</li>
+        <li>Struktur handle dan panel depan menyerupai tas asli</li>
+    </ul>
+
+    <p><b>Elemen Ditiru:</b></p>
+    <ul>
+        <li>peniruan struktur dan </li>
+        <li>Air Unit Transparan Besar
+	→ ciri khas utama Air Max
+	</li>
+        <li>Desain Midsole & Sol Transparan
+	→ dibuat menyerupai teknologi Nike Air
+	</li>
+	<li>Brand Positioning / “Look-alike trick”
+	→ konsumen diarahkan berpikir bahwa sepatu ini bagian dari lini Nike Air
+	</li>
+
+    </ul>
+
+    <p><b>Dampak Bagi Brand Asli:</b></p>
+    <ul>
+        <li>Brand Dilution (Penurunan Nilai Merek)</li>
+        <li>Kerugian Ekonomi</li>
+        <li>Kebingungan Konsumen</li>
+	<li>Ancaman Inovasi</li>
+    </ul>
+
+    <p><b>Pasal Terkait:</b> Pasal 4, 6(1), 76, 83, 90–92, 94</p>
+</div>
+
+<!-- ====================== PRODUK 3 ADIDAS SAMBA ====================== -->
+<div class="card">
+    <h3>Sepatu Adidas Samba</h3>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="img/samba_real.jpg">
+        </div>
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="img/samba_fake.jpg">
+        </div>
+    </div>
+
+    <p><b>Kategori:</b> Pelanggaran Merek / Barang Tiruan (Counterfeit)</p>
+
+<p><b>Persamaan Pada Pokoknya:</b></p>
+<ul>
+    <li>Produk pada gambar kedua meniru elemen-elemen khas Adidas Samba sehingga secara keseluruhan memberi kesan yang sama pada pokoknya.</li>
+</ul>
+
+<p><b>Elemen Ditiru:</b></p>
+<ul>
+    <li>Tiga Garis (Three Stripes) → identitas visual utama Adidas.</li>
+    <li>Logo Trefoil pada insole → simbol resmi Adidas.</li>
+    <li>Tag biru Adidas di lidah sepatu.</li>
+    <li>Desain upper, bentuk sol, dan warna menyerupai Adidas Samba.</li>
+</ul>
+
+<p><b>Dampak Bagi Brand Asli:</b></p>
+<ul>
+    <li>Brand Dilution (Penurunan Nilai Merek)</li>
+    <li>Kerugian Ekonomi</li>
+    <li>Kebingungan Konsumen</li>
+    <li>Ancaman Inovasi</li>
+</ul>
+
+<p><b>Pasal Terkait (UU Merek No. 15 Tahun 2001):</b></p>
+<ul>
+    <li>Pasal 4 — Definisi Merek</li>
+    <li>Pasal 6 Ayat (1) — Larangan Kemiripan / Persamaan Pada Pokoknya</li>
+    <li>Pasal 76 — Gugatan Pelanggaran Merek</li>
+    <li>Pasal 83 — Ganti Rugi</li>
+    <li>Pasal 90–92 — Ketentuan Pidana Merek</li>
+    <li>Pasal 94 — Penyitaan Barang Palsu</li>
+</ul>
+
+</div>
+
+<!-- ====================== PRODUK 4 LV ====================== -->
+<div class="card">
+    <h3>Tas Louis Vuitton</h3>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="img/luis_real.jpg">
+        </div>
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="img/luis_fake.jpg">
+        </div>
+    </div>
+
+    <p><b>Kategori:</b> Barang Tiruan / Counterfeit (Pelanggaran Merek)</p>
+
+<p><b>Persamaan Pada Pokoknya:</b></p>
+<ul>
+    <li>Kedua tas memiliki kemiripan mencolok dengan pola dan identitas khas Louis Vuitton, sehingga secara keseluruhan menimbulkan kesan yang sama pada pokoknya.</li>
+    <li>Pola Damier Ebene Louis Vuitton.</li>
+    <li>Logo LV (monogram).</li>
+    <li>Penempatan logo di bagian tengah tas.</li>
+    <li>Gaya & warna material menyerupai Louis Vuitton.</li>
+</ul>
+
+<p><b>Elemen Ditiru:</b></p>
+<ul>
+    <li>Pola Damier Ebene.</li>
+    <li>Logo LV (Monogram).</li>
+    <li>Bentuk tas & gaya hardware.</li>
+    <li>Warna dan tekstur material.</li>
+</ul>
+
+<p><b>Dampak Bagi Brand Asli:</b></p>
+<ul>
+    <li>Brand Dilution (Penurunan Nilai Merek)</li>
+    <li>Kerugian Ekonomi</li>
+    <li>Kebingungan Konsumen</li>
+    <li>Ancaman Inovasi</li>
+    <li>Penurunan Nilai Eksklusivitas</li>
+</ul>
+
+<p><b>Pasal Terkait (UU Merek No. 15 Tahun 2001):</b></p>
+<ul>
+    <li>Pasal 4 — Definisi Merek</li>
+    <li>Pasal 6 Ayat (1) — Larangan Kemiripan / Persamaan Pada Pokoknya</li>
+    <li>Pasal 76 — Gugatan Pelanggaran Merek</li>
+    <li>Pasal 83 — Ganti Rugi</li>
+    <li>Pasal 90–92 — Ketentuan Pidana Merek</li>
+    <li>Pasal 94 — Penyitaan Barang Palsu</li>
+</ul>
+
+</div>
+
+<!-- ====================== PRODUK 5 BORDIR KOTAK ====================== -->
+<div class="card">
+    <h3>Tas Wanita Bordir Kotak</h3>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="img/bordirkotak_real.jpg">
+        </div>
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="img/bordirkotak_fake.jpg">
+        </div>
+    </div>
+
+    <p><b>Kategori:</b> Merek Menyerupai Konsep / Look-Alike Packaging</p>
+
+<p><b>Persamaan Pada Pokoknya:</b></p>
+<ul>
+    <li>Terdapat persamaan pada pokoknya karena desain keseluruhan meniru ciri khas tas premium.</li>
+    <li>Logo ditulis dengan gaya skrip yang menyerupai gaya huruf merek terkenal.</li>
+    <li>Desain tas (quilted pattern, bentuk body, hardware emas, gantungan karakter) meniru elemen khas tas premium di pasaran.</li>
+</ul>
+
+<p><b>Elemen Ditiru:</b></p>
+<ul>
+    <li>Bentuk dan gaya logo.</li>
+    <li>Desain tas.</li>
+    <li>Atribut / aksesoris (hardware emas, gantungan, detail visual).</li>
+</ul>
+
+<p><b>Dampak Bagi Brand Asli:</b></p>
+<ul>
+    <li>Brand Dilution (Penurunan Nilai Merek)</li>
+    <li>Kerugian Ekonomi</li>
+    <li>Kebingungan Konsumen</li>
+    <li>Ancaman Inovasi</li>
+    <li>Penurunan Nilai Eksklusivitas</li>
+</ul>
+
+<p><b>Pasal Terkait (UU Merek No. 15 Tahun 2001):</b></p>
+<ul>
+    <li>Pasal 4 — Definisi Merek</li>
+    <li>Pasal 6 Ayat (1) — Larangan Kemiripan / Persamaan Pada Pokoknya</li>
+    <li>Pasal 76 — Gugatan Pelanggaran Merek</li>
+    <li>Pasal 83 — Ganti Rugi</li>
+    <li>Pasal 90–92 — Ketentuan Pidana Merek</li>
+    <li>Pasal 94 — Penyitaan Barang Palsu</li>
+</ul>
+
+</div>
+
+<!-- ====================== PRODUK 6 FUJIKA ====================== -->
+<div class="card">
+    <h3>Fujika Tas</h3>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="img/fujika_real.jpg">
+        </div>
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="img/fujika_fake.jpg">
+        </div>
+    </div>
+
+    <p><b>Kategori:</b> Merek Menyerupai Konsep / Look-Alike Packaging</p>
+
+<p><b>Persamaan Pada Pokoknya:</b></p>
+<ul>
+    <li>Kedua tas memakai desain, bentuk, dan peletakan hardware yang sangat menyerupai model tas brand tertentu yang sudah terkenal.</li>
+    <li>Elemen-elemen yang serupa dapat menyebabkan konsumen berpikir bahwa tas tersebut berasal dari brand tertentu.</li>
+</ul>
+
+<p><b>Elemen Ditiru:</b></p>
+<ul>
+    <li>Desain struktur tas.</li>
+    <li>Tekstur kulit (crocodile pattern).</li>
+    <li>Bentuk dan posisi plat logo, serta penempatan dan gaya hardware.</li>
+    <li>Aksesoris charm (gantungan) yang mengikuti gaya produk premium.</li>
+</ul>
+
+<p><b>Dampak Bagi Brand Asli:</b></p>
+<ul>
+    <li>Brand Dilution (Penurunan Nilai Merek)</li>
+    <li>Kerugian Ekonomi</li>
+    <li>Kebingungan Konsumen</li>
+    <li>Ancaman Inovasi</li>
+    <li>Penurunan Nilai Eksklusivitas</li>
+</ul>
+
+<p><b>Pasal Terkait (UU Merek No. 15 Tahun 2001):</b></p>
+<ul>
+    <li>Pasal 4 — Definisi Merek</li>
+    <li>Pasal 6 Ayat (1) — Larangan Kemiripan / Persamaan Pada Pokoknya</li>
+    <li>Pasal 76 — Gugatan Pelanggaran Merek</li>
+    <li>Pasal 83 — Ganti Rugi</li>
+    <li>Pasal 90–92 — Ketentuan Pidana Merek</li>
+    <li>Pasal 94 — Penyitaan Barang Palsu</li>
+</ul>
+
+</div>
+
+<!-- ====================== PRODUK 7 SELEMPANG ====================== -->
+<div class="card">
+    <h3>Tas Selempang</h3>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="img/flap_real.jpg">
+        </div>
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="img/flap_fake.jpg">
+        </div>
+    </div>
+
+    <p><b>Kategori:</b> Imitasi / Duplikasi Model (Look-Alike Product)</p>
+
+<p><b>Persamaan Pada Pokoknya:</b></p>
+<ul>
+    <li>Penempatan logo pada posisi yang sama.</li>
+    <li>Bentuk dan struktur tas sangat mirip.</li>
+    <li>Desain pengait pegangan (hardware) dibuat menyerupai.</li>
+    <li>Kombinasi warna dan pola panel depan serupa.</li>
+</ul>
+
+<p><b>Elemen Ditiru:</b></p>
+<ul>
+    <li>Logo / plate signage (dengan kualitas lebih rendah dan tampak kabur).</li>
+    <li>Desain tas: shape, potongan V bagian depan, dan dua pegangan.</li>
+    <li>Hardware emas yang menyerupai aksen desain brand asli.</li>
+    <li>Overall aesthetic yang meniru identitas visual brand.</li>
+</ul>
+
+<p><b>Dampak Bagi Brand Asli:</b></p>
+<ul>
+    <li>Brand Dilution (Penurunan Nilai Merek)</li>
+    <li>Kerugian Ekonomi</li>
+    <li>Kebingungan Konsumen</li>
+    <li>Ancaman Inovasi</li>
+    <li>Penurunan Nilai Eksklusivitas</li>
+</ul>
+
+<p><b>Pasal Terkait (UU Merek No. 15 Tahun 2001):</b></p>
+<ul>
+    <li>Pasal 4 — Definisi Merek</li>
+    <li>Pasal 6 Ayat (1) — Larangan Kemiripan / Persamaan Pada Pokoknya</li>
+    <li>Pasal 76 — Gugatan Pelanggaran Merek</li>
+    <li>Pasal 83 — Ganti Rugi</li>
+    <li>Pasal 90–92 — Ketentuan Pidana Merek</li>
+    <li>Pasal 94 — Penyitaan Barang Palsu</li>
+</ul>
+
+
+</div>
+
+<!-- ====================== PRODUK 8 LV VERSI LAIN ====================== -->
+<div class="card">
+    <h3>Apple Watch</h3>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="img/apple_real.jpg">
+        </div>
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="img/apple_fake.jpg">
+        </div>
+    </div>
+
+    <p><b>Kategori:</b> Replica / Imitation / KW Elektronik</p>
+
+<p><b>Persamaan Pada Pokoknya:</b></p>
+<ul>
+    <li>Bentuk watch body yang sangat menyerupai Apple Watch.</li>
+    <li>Bentuk crown bulat khas Apple.</li>
+    <li>Ukuran dan bentuk strap yang mirip.</li>
+    <li>Desain layar kotak dengan sudut melengkung.</li>
+    <li>Kemasan yang meniru kotak Apple Watch.</li>
+</ul>
+
+<p><b>Elemen Ditiru:</b></p>
+<ul>
+    <li>Desain fisik (trade dress) Apple Watch.</li>
+    <li>Tata letak tombol dan crown.</li>
+    <li>Desain strap.</li>
+    <li>Kemasan produk.</li>
+    <li>Pencantuman kata “WATCH” dengan gaya menyerupai branding Apple Watch.</li>
+</ul>
+
+<p><b>Dampak Bagi Brand Asli:</b></p>
+<ul>
+    <li>Brand Dilution (Penurunan Nilai Merek)</li>
+    <li>Kerugian Ekonomi</li>
+    <li>Kebingungan Konsumen</li>
+    <li>Ancaman Inovasi</li>
+    <li>Penurunan Nilai Eksklusivitas</li>
+</ul>
+
+<p><b>Pasal Terkait (UU Merek No. 15 Tahun 2001):</b></p>
+<ul>
+    <li>Pasal 4 — Definisi Merek</li>
+    <li>Pasal 6 Ayat (1) — Larangan Kemiripan / Persamaan Pada Pokoknya</li>
+    <li>Pasal 76 — Gugatan Pelanggaran Merek</li>
+    <li>Pasal 83 — Ganti Rugi</li>
+    <li>Pasal 90–92 — Ketentuan Pidana Merek</li>
+    <li>Pasal 94 — Penyitaan Barang Palsu</li>
+</ul>
+
+</div>
+
+<!-- ====================== PRODUK 9 SCARLETT ====================== -->
+<div class="card">
+    <h3>Scarlett Whitening Perfume</h3>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="img/scarlett_real.jpg">
+        </div>
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="img/scarlett_fake.jpg">
+        </div>
+    </div>
+
+    <p><b>Kategori:</b> Duplication / Counterfeit (Palsu Meniru Merek Terdaftar)</p>
+
+<p><b>Persamaan Pada Pokoknya:</b></p>
+<ul>
+    <li>Sama–sama menggunakan nama “Scarlett”.</li>
+    <li>Varian “Velvet Rouge”.</li>
+    <li>Format label mirip (blok hitam + teks).</li>
+    <li>Sama-sama berjenis parfum “Extrait de Parfum”.</li>
+</ul>
+
+<p><b>Elemen Ditiru:</b></p>
+<ul>
+    <li>Logo / plate signage (meski kualitas lebih rendah dan tampak kabur).</li>
+    <li>Desain tas (shape, potongan V bagian depan, dua pegangan).</li>
+    <li>Hardware emas yang menyerupai aksen desain brand asli.</li>
+    <li>Overall aesthetic yang meniru identitas visual brand.</li>
+</ul>
+
+<p><b>Dampak Bagi Brand Asli:</b></p>
+<ul>
+    <li>Brand Dilution (Penurunan Nilai Merek)</li>
+    <li>Kerugian Ekonomi</li>
+    <li>Kebingungan Konsumen</li>
+    <li>Ancaman Inovasi</li>
+    <li>Penurunan Nilai Eksklusivitas</li>
+</ul>
+
+<p><b>Pasal Terkait (UU Merek No. 15 Tahun 2001):</b></p>
+<ul>
+    <li>Pasal 4 — Definisi Merek</li>
+    <li>Pasal 6 Ayat (1) — Larangan Kemiripan / Persamaan Pada Pokoknya</li>
+    <li>Pasal 76 — Gugatan Pelanggaran Merek</li>
+    <li>Pasal 83 — Ganti Rugi</li>
+    <li>Pasal 90–92 — Ketentuan Pidana Merek</li>
+    <li>Pasal 94 — Penyitaan Barang Palsu</li>
+</ul>
+
+</div>
+
+<!-- ====================== PRODUK 10 COKLAT DUBAI ====================== -->
+<div class="card">
+    <h3>Coklat "Dubai"</h3>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="img/dubai_real.jpg">
+        </div>
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="img/dubai_fake.jpg">
+        </div>
+    </div>
+
+    <p><b>Kategori:</b> Look-Alike Imitation / Tiruan Kemasan (Packaging Imitation)</p>
+
+<p><b>Persamaan Pada Pokoknya:</b></p>
+<ul>
+    <li>Desain warna yang sangat mirip.</li>
+    <li>Font tulisan menyerupai gaya asli.</li>
+    <li>Layout keseluruhan kemasan hampir sama.</li>
+    <li>Visual splash coklat dan potongan kunafe yang identik.</li>
+</ul>
+
+<p><b>Elemen Ditiru:</b></p>
+<ul>
+    <li>Nama merek sama persis: “Dubai Chocolate”.</li>
+    <li>Desain kemasan: warna kuning, elemen coklat meleleh, ilustrasi coklat.</li>
+    <li>Tipografi (font) utama.</li>
+    <li>Layout komposisi gambar dan tulisan.</li>
+    <li>Tampilan produk yang dapat membingungkan konsumen.</li>
+</ul>
+
+<p><b>Dampak Bagi Brand Asli:</b></p>
+<ul>
+    <li>Brand Dilution (Penurunan Nilai Merek)</li>
+    <li>Kerugian Ekonomi</li>
+    <li>Kebingungan Konsumen</li>
+    <li>Ancaman Inovasi</li>
+    <li>Penurunan Nilai Eksklusivitas</li>
+</ul>
+
+<p><b>Pasal Terkait (UU Merek No. 15 Tahun 2001):</b></p>
+<ul>
+    <li>Pasal 4 — Definisi Merek</li>
+    <li>Pasal 6 Ayat (1) — Larangan Kemiripan / Persamaan Pada Pokoknya</li>
+    <li>Pasal 76 — Gugatan Pelanggaran Merek</li>
+    <li>Pasal 83 — Ganti Rugi</li>
+    <li>Pasal 90–92 — Ketentuan Pidana Merek</li>
+    <li>Pasal 94 — Penyitaan Barang Palsu</li>
+</ul>
+
+</div>
+
+<!-- ====================== DAMPAK EMPAT PIHAK ====================== -->
+<div class="card">
+    <h3>Dampak Pelanggaran Merek (Empat Pihak)</h3>
+
+    <p><b>1. Dampak bagi Konsumen:</b></p>
+    <ul>
+        <li>Konsumen tertipu karena mirip dengan produk asli.</li>
+        <li>Kualitas buruk sehingga merugikan.</li>
+        <li>Risiko kesehatan (terutama kosmetik).</li>
+    </ul>
+
+    <p><b>2. Dampak bagi Pemilik Merek Asli:</b></p>
+    <ul>
+        <li>Kerugian finansial.</li>
+        <li>Nilai brand turun.</li>
+        <li>Reputasi rusak.</li>
+    </ul>
+
+    <p><b>3. Dampak bagi Produsen Barang Palsu:</b></p>
+    <ul>
+        <li>Risiko pidana (Pasal 90–92).</li>
+        <li>Penyitaan barang (Pasal 94).</li>
+    </ul>
+
+    <p><b>4. Dampak bagi Marketplace:</b></p>
+    <ul>
+        <li>Kepercayaan pengguna menurun.</li>
+        <li>Harus melakukan moderasi konten.</li>
+    </ul>
+</div>
+
+<!-- ====================== KESIMPULAN NASIONAL ====================== -->
+<div class="card">
+    <h3>Kesimpulan Nasional Fenomena Fake Brand</h3>
+
+    <p>
+        Fenomena produk tiruan di Indonesia masih sangat tinggi terutama pada platform marketplace.
+        Banyak produk yang meniru logo, warna, kemasan atau sekadar memanfaatkan popularitas merek 
+        asli untuk menarik pembeli.
+    </p>
+
+    <p>
+        Aktivitas ini bukan hanya merugikan pemilik merek asli, tetapi juga membahayakan konsumen
+        dan melemahkan daya saing industri lokal. Edukasi, penegakan hukum, serta kolaborasi antara
+        pemerintah, marketplace, dan pemilik merek sangat diperlukan untuk menekan penyebaran produk
+        palsu di Indonesia.
+    </p>
+</div>
+
+<!-- ====================== REKOMENDASI ====================== -->
+<div class="card">
+    <h3>Rekomendasi Solusi Hukum & Pencegahan Fake Brand</h3>
+
+    <p><b>1. Pencegahan oleh Pemerintah:</b></p>
+    <ul>
+        <li>Peningkatan pengawasan produk impor & marketplace.</li>
+        <li>Pembinaan kepada UMKM soal pentingnya HKI.</li>
+    </ul>
+
+    <p><b>2. Edukasi Publik:</b></p>
+    <ul>
+        <li>Kampanye tentang bahaya barang palsu.</li>
+        <li>Panduan identifikasi produk asli.</li>
+    </ul>
+
+    <p><b>3. Penegakan Hukum:</b></p>
+    <ul>
+        <li>Penerapan pidana yang lebih tegas.</li>
+        <li>Kerja sama antara marketplace dan pemilik brand.</li>
+    </ul>
+
+    <p><b>4. Peran Marketplace:</b></p>
+    <ul>
+        <li>Filter otomatis untuk konten palsu.</li>
+        <li>Verifikasi ketat untuk brand premium.</li>
+    </ul>
+</div>
+
+<!-- ====================== REFERENSI ====================== -->
+<div class="card">
+    <h3>Daftar Referensi</h3>
+    <ul>
+        <li><p><b>Link Tas balenciaga:</b> <a href="https://id.shp.ee/BnJotrj" target="_blank">Klik di sini</a></p> </li>
+        <li><p><b>Link sepatu nike airmax:</b> <a href="https://id.shp.ee/Z8mhxhg " target="_blank">Klik di sini</a></p> </li>
+        <li><p><b>Link Sepatu Adidas Samba:</b> <a href="https://id.shp.ee/m8uuVPE" target="_blank">Klik di sini</a></p> </li>
+        <li><p><b>Link Tas Louis Vuitton:</b> <a href="https://id.shp.ee/VuZQqhs" target="_blank">Klik di sini</a></p> </li>
+        <li><p><b>Link Tas Wanita Bordir Kontak:</b> <a href="https://id.shp.ee/Afvmq5S" target="_blank">Klik di sini</a></p> </li>
+        <li><p><b>Link Fujika Tas:</b> <a href="https://id.shp.ee/HriKPPg" target="_blank">Klik di sini</a></p> </li>
+        <li><p><b>Link Tas Selempang:</b> <a href="https://id.shp.ee/Sr4a2U4" target="_blank">Klik di sini</a></p> </li>
+        <li><p><b>Link Apple Watch:</b> <a href="https://id.shp.ee/EbQY7Ns" target="_blank">Klik di sini</a></p> </li>
+        <li><p><b>Link Parfume Scarlett:</b> <a href="https://id.shp.ee/G9L4cnc" target="_blank">Klik di sini</a></p> </li>
+        <li><p><b>Link Coklat Dubai:</b> <a href="https://id.shp.ee/msvrT5q" target="_blank">Klik di sini</a></p> </li>
+    </ul>
+</div>
 
 </body>
 </html>
