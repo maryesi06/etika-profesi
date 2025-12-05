@@ -1,163 +1,162 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laporan Etika Profesi</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HBD My Love</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1a;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
 
-<style>
-    body {
-        font-family: "Poppins", Arial, sans-serif;
-        background: #0e0e0e;
-        margin: 0;
-        padding: 20px;
-        color: #f2f2f2;
-    }
+        /* Container */
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease forwards;
+            opacity: 0;
+        }
 
-    .card {
-        background: #151515;
-        padding: 25px;
-        margin: 25px auto;
-        border-radius: 14px;
-        border: 1px solid #d4af37;
-        box-shadow: 0 4px 12px rgba(212,175,55,0.25);
-        width: 90%;
-        max-width: 1200px;
+        /* Photo */
+        .photo {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 6px solid #ff4d6d;
+            box-shadow: 0 0 25px #ff4d6d;
+            animation: glow 2s infinite alternate ease-in-out, zoomIn 1.4s ease forwards;
+        }
 
-        animation: fadeUp 0.8s ease forwards;
-        opacity: 0;
-    }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    @keyframes fadeUp {
-        0% { opacity: 0; transform: translateY(25px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
+        /* Title */
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            animation: slideDown 1.4s ease forwards;
+            opacity: 0;
+        }
 
-    h2, h3 {
-        text-align: center;
-        margin-top: 0;
-        color: #d4af37;
-        text-shadow: 0 0 8px rgba(212,175,55,0.55);
-        letter-spacing: 1px;
-    }
+        p {
+            font-size: 18px;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 0.5s;
+        }
 
-    ul li, p {
-        color: #e6e6e6;
-        line-height: 1.6;
-    }
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 26px;
+            font-size: 18px;
+            background: #ff4d6d;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 0 15px #ff4d6d;
+            transition: 0.3s;
+            animation: fadeIn 2.5s ease forwards 1s;
+            opacity: 0;
+        }
 
-    .product-images {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin: 20px 0;
-    }
+        .btn:hover {
+            background: #ff3358;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px #ff4d6d;
+        }
 
-    .image-wrapper {
-        position: relative;
-    }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    .product-images img {
-        width: 260px;
-        height: auto;
-        border-radius: 12px;
-        border: 2px solid #d4af37;
-        box-shadow: 0 0 10px rgba(212,175,55,0.45);
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .product-images img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 18px rgba(212,175,55,0.9);
-    }
+        @keyframes zoomIn {
+            0% { transform: scale(0.4); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
 
-    .image-label {
-        position: absolute;
-        top: 8px;
-        left: 8px;
-        background: #d4af37;
-        color: #000;
-        padding: 5px 12px;
-        font-size: 14px;
-        border-radius: 6px;
-        font-weight: bold;
-        animation: pulseGlow 2s infinite ease-in-out;
-    }
+        @keyframes glow {
+            from { box-shadow: 0 0 15px #ff4d6d; }
+            to { box-shadow: 0 0 35px #ff4d6d; }
+        }
 
-    @keyframes pulseGlow {
-        0% { box-shadow: 0 0 5px rgba(212,175,55,0.4); }
-        50% { box-shadow: 0 0 18px rgba(212,175,55,1); }
-        100% { box-shadow: 0 0 5px rgba(212,175,55,0.4); }
-    }
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            color: #ff4d6d;
+            font-size: 22px;
+            animation: floatUp 5s linear infinite;
+            opacity: 0.7;
+        }
 
-    a {
-        color: #d4af37;
-        font-weight: bold;
-        transition: 0.25s ease;
-    }
-
-    a:hover {
-        color: #fff4bd;
-        text-shadow: 0 0 7px rgba(255,215,0,0.7);
-        transform: scale(1.03);
-    }
-</style>
+        @keyframes floatUp {
+            from {
+                transform: translateY(0);
+                opacity: 0.8;
+            }
+            to {
+                transform: translateY(-800px);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- ===============================
-     MASUKKAN CARD-CARD KAMU DI SINI
-     (COBA CONTOH CARD DI BAWAH DULU)
-     =============================== -->
-
-<div class="card">
-    <h2>Contoh Card Pertama</h2>
-
-    <div class="product-images">
-        <div class="image-wrapper">
-            <span class="image-label">REAL</span>
-            <img src="https://via.placeholder.com/260">
+    <div class="container">
+        <div class="photo">
+            <img src="your-photo.jpg" alt="Photo">
         </div>
 
-        <div class="image-wrapper">
-            <span class="image-label">FAKE</span>
-            <img src="https://via.placeholder.com/260">
-        </div>
+        <h1>Happy Birthday My Sayang ❤️</h1>
+
+        <p>
+            Semoga kamu selalu bahagia, sehat, dan makin cantik setiap hari.  
+            Aku selalu bangga punya kamu.  
+            I love you sayangku. 💕
+        </p>
+
+        <a class="btn" href="#">Klik di sini sayang ❤️</a>
     </div>
 
-    <p><b>Kategori:</b> Pelanggaran Merek / Barang Tiruan (Counterfeit)</p>
+    <script>
+        // Floating hearts effect
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+            heart.style.fontSize = (18 + Math.random() * 20) + "px";
+            document.body.appendChild(heart);
 
-    <h3>Persamaan Pada Pokoknya</h3>
-    <ul>
-        <li>Produk pada gambar kedua meniru elemen khas brand asli.</li>
-    </ul>
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
 
-    <h3>Elemen Yang Ditiru</h3>
-    <ul>
-        <li>Logo</li>
-        <li>Desain produk</li>
-        <li>Warna & bentuk</li>
-    </ul>
-
-    <h3>Dampak Bagi Brand Asli</h3>
-    <ul>
-        <li>Brand Dilution</li>
-        <li>Kerugian Ekonomi</li>
-        <li>Ancaman Inovasi</li>
-    </ul>
-</div>
-
-<!-- =================================
-     SCRIPT DELAY ANIMASI PER CARD
-     ================================= -->
-<script>
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((c, i) => {
-        c.style.animationDelay = (i * 0.12) + 's';
-    });
-</script>
+        setInterval(createHeart, 350);
+    </script>
 
 </body>
 </html>
