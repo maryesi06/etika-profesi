@@ -24,13 +24,12 @@
         width: 90%;
         max-width: 1200px;
 
-        /* ANIMASI MASUK */
         animation: fadeUp 0.8s ease forwards;
         opacity: 0;
     }
 
     @keyframes fadeUp {
-        0% { opacity: 0; transform: translateY(20px); }
+        0% { opacity: 0; transform: translateY(25px); }
         100% { opacity: 1; transform: translateY(0); }
     }
 
@@ -65,14 +64,12 @@
         border-radius: 12px;
         border: 2px solid #d4af37;
         box-shadow: 0 0 10px rgba(212,175,55,0.45);
-
-        /* ANIMASI HOVER GAMBAR */
         transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
     .product-images img:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 15px rgba(212,175,55,0.7);
+        box-shadow: 0 0 18px rgba(212,175,55,0.9);
     }
 
     .image-label {
@@ -85,16 +82,13 @@
         font-size: 14px;
         border-radius: 6px;
         font-weight: bold;
-
-        /* ANIMASI GLOW */
         animation: pulseGlow 2s infinite ease-in-out;
-        box-shadow: 0 0 6px rgba(212,175,55,0.6);
     }
 
     @keyframes pulseGlow {
-        0% { box-shadow: 0 0 6px rgba(212,175,55,0.5); }
-        50% { box-shadow: 0 0 16px rgba(212,175,55,1); }
-        100% { box-shadow: 0 0 6px rgba(212,175,55,0.5); }
+        0% { box-shadow: 0 0 5px rgba(212,175,55,0.4); }
+        50% { box-shadow: 0 0 18px rgba(212,175,55,1); }
+        100% { box-shadow: 0 0 5px rgba(212,175,55,0.4); }
     }
 
     a {
@@ -104,32 +98,60 @@
     }
 
     a:hover {
-        color: #f7e7a6;
-        text-shadow: 0 0 6px rgba(255,215,0,0.6);
+        color: #fff4bd;
+        text-shadow: 0 0 7px rgba(255,215,0,0.7);
         transform: scale(1.03);
     }
-
-    ul { margin-top: 6px; }
-
 </style>
 </head>
 
 <body>
 
-<!-- ==========================
-     MULAI KONTEN KAMU (CARD-CARD)
-     ========================== -->
+<!-- ===============================
+     MASUKKAN CARD-CARD KAMU DI SINI
+     (COBA CONTOH CARD DI BAWAH DULU)
+     =============================== -->
 
 <div class="card">
-    <h2>Judul Laporan Etika Profesi</h2>
-    <p>Contoh pengisian konten laporan... (isi card-card kamu seperti sebelumnya)</p>
+    <h2>Contoh Card Pertama</h2>
+
+    <div class="product-images">
+        <div class="image-wrapper">
+            <span class="image-label">REAL</span>
+            <img src="https://via.placeholder.com/260">
+        </div>
+
+        <div class="image-wrapper">
+            <span class="image-label">FAKE</span>
+            <img src="https://via.placeholder.com/260">
+        </div>
+    </div>
+
+    <p><b>Kategori:</b> Pelanggaran Merek / Barang Tiruan (Counterfeit)</p>
+
+    <h3>Persamaan Pada Pokoknya</h3>
+    <ul>
+        <li>Produk pada gambar kedua meniru elemen khas brand asli.</li>
+    </ul>
+
+    <h3>Elemen Yang Ditiru</h3>
+    <ul>
+        <li>Logo</li>
+        <li>Desain produk</li>
+        <li>Warna & bentuk</li>
+    </ul>
+
+    <h3>Dampak Bagi Brand Asli</h3>
+    <ul>
+        <li>Brand Dilution</li>
+        <li>Kerugian Ekonomi</li>
+        <li>Ancaman Inovasi</li>
+    </ul>
 </div>
 
-<!-- (TINGGAL COPY–PASTE SELURUH CARD LAPORANMU DI SINI) -->
-
-<!-- ==========================
-     SCRIPT ANIMASI DELAY
-     ========================== -->
+<!-- =================================
+     SCRIPT DELAY ANIMASI PER CARD
+     ================================= -->
 <script>
     const cards = document.querySelectorAll('.card');
     cards.forEach((c, i) => {
