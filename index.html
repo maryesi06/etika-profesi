@@ -8,65 +8,108 @@
     <style>
 /* ========== BASE STYLE ========== */
 body {
-    background: linear-gradient(180deg, #000000, #1a1a1a, #000000);
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    padding: 40px 20px;
+    font-family: "Poppins", Arial, sans-serif;
+    background: #0e0e0e;
+    margin: 0;
+    padding: 20px;
+    color: #f2f2f2;
+
+    /* Responsive font */
+    font-size: clamp(14px, 1.2vw, 18px);
 }
 
-/* Box Styling */
-.box {
-    background: rgba(20, 20, 20, 0.9);
-    padding: 40px;
-    border-radius: 20px;
-    border: 2px solid #d4af37;
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
-    margin-bottom: 40px;
-    transition: 0.3s ease-in-out;
+/* ========== CARD CONTAINER ========== */
+.card {
+    background: #151515;
+    padding: clamp(18px, 3vw, 30px);
+    margin: 25px auto;
+
+    border-radius: 14px;
+    border: 1px solid #d4af37;
+    box-shadow: 0 4px 12px rgba(212,175,55,0.25);
+
+    /* FLEXIBEL RESPONSIVE */
+    width: min(95%, 1100px); 
 }
 
-.box:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
-}
-
-/* Title Glow */
-h1, h2, h3 {
+/* ========== HEADINGS ========== */
+h2, h3 {
     text-align: center;
-    color: #ffd700;
-    text-shadow: 0 0 10px #ffd700, 0 0 20px #b8860b;
-    margin-bottom: 25px;
+    margin-top: 0;
+    color: #d4af37;
+    text-shadow: 0 0 8px rgba(212,175,55,0.55);
+    letter-spacing: 1px;
+
+    /* Responsive font size */
+    font-size: clamp(20px, 2.2vw, 32px);
 }
 
-/* Biodata cover */
-.cover-info {
-    font-size: 18px;
+/* ========== TEXT ========== */
+ul li, p {
+    color: #e6e6e6;
     line-height: 1.7;
-    text-align: center;
+    font-size: clamp(14px, 1.4vw, 18px);
 }
 
-/* Daftar Isi */
-.daftar-isi ul {
-    font-size: 18px;
-    line-height: 1.9;
-    padding-left: 25px;
+ul { margin-top: 6px; }
+
+/* ========== IMAGES ========== */
+.product-images {
+    display: flex;
+    flex-wrap: wrap;       /* penting supaya tidak overflow di HP */
+    justify-content: center;
+    gap: 14px;
+    margin: 20px 0;
 }
 
-.daftar-isi ul li {
-    padding: 5px 0;
-    transition: 0.2s;
+.product-images img {
+    width: clamp(140px, 30vw, 260px); /* otomatis mengecil di HP */
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212,175,55,0.45);
 }
 
-.daftar-isi ul li:hover {
-    color: #ffd700;
-    transform: translateX(5px);
-    cursor: pointer;
+.image-wrapper {
+    position: relative;
 }
 
-/* Halaman agar lebih rapi */
-.container {
-    max-width: 900px;
-    margin: auto;
+.image-label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #d4af37;
+    color: #000;
+    padding: 5px 12px;
+    font-size: clamp(10px, 1.4vw, 14px);
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 0 0 6px rgba(212,175,55,0.6);
+}
+
+/* ========== LINKS ========== */
+a { 
+    color: #d4af37;
+    font-weight: bold;
+}
+a:hover {
+    color: #f7e7a6;
+    text-shadow: 0 0 6px rgba(255,215,0,0.6);
+}
+
+/* ========== MOBILE OPTIMIZATION ========== */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    ul li {
+        margin-left: 5px;
+    }
 }
 
 </style>
@@ -75,34 +118,36 @@ h1, h2, h3 {
 <body>
 
 <!-- ====================== COVER ====================== -->
-<div class="container">
+<div class="card">
+    <h2>MIRROR Brand</h2>
 
-    <div class="box">
-        <h1>MIRROR Brand</h1>
-        <div class="cover-info">
-            <p><b>Mata Kuliah:</b> Etika Profesi</p>
-            <p><b>Nama:</b> Maryesi Telussa</p>
-            <p><b>NIM:</b> 202351010</p>
-            <p><b>Dosen Pengampu:</b> Ibu Citra Fathia Palembang, S.Kom., M.Kom.</p>
-        </div>
-    </div>
+    <p style="text-align:center;">
+        <b>Mata Kuliah:</b> Etika Profesi<br>
+        <b>Nama :</b> Maryesi Telussa<br>
+        <b>NIM :</b> 202351010<br>
+        <b>Dosen Pengampu:</b> Ibu Citra Fathia Palembang, S.Kom., M.Kom.
+    </p>
+</div>
 
-    <div class="box daftar-isi">
-        <h2>Daftar Isi</h2>
-        <ul>
-            <li>1. Tas Balenciaga – Fake vs Real</li>
-            <li>2. Sepatu Nike Air Max</li>
-            <li>3. Sepatu Adidas Samba</li>
-            <li>4. Tas Louis Vuitton</li>
-            <li>5. Tas Wanita Bordir Kotak</li>
-            <li>6. Fujika Tas</li>
-            <li>7. Tas Selempang</li>
-            <li>8. Tas Louis Vuitton (versi lain)</li>
-            <li>9. Scarlett Whitening Perfume</li>
-            <li>10. Coklat Dubai</li>
-        </ul>
-    </div>
-
+<!-- ====================== DAFTAR ISI ====================== -->
+<div class="card">
+    <h3>Daftar Isi</h3>
+    <ul>
+        <li>1. Tas Balenciaga – Fake vs Real</li>
+        <li>2. Sepatu Nike Air Max</li>
+        <li>3. Sepatu Adidas Samba</li>
+        <li>4. Tas Louis Vuitton</li>
+        <li>5. Tas Wanita Bordir Kotak</li>
+        <li>6. Fujika Tas</li>
+        <li>7. Tas Selempang</li>
+        <li>8. Tas Louis Vuitton (versi lain)</li>
+        <li>9. Scarlett Whitening Perfume</li>
+        <li>10. Coklat “Dubai”</li>
+        <li>11. Dampak Pelanggaran Merek</li>
+        <li>12. Kesimpulan Nasional Fake Brand</li>
+        <li>13. Rekomendasi Solusi Hukum</li>
+        <li>14. Daftar Referensi</li>
+    </ul>
 </div>
 
 <!-- ====================== PRODUK 1 BALENCIAGA ====================== -->
@@ -460,7 +505,7 @@ h1, h2, h3 {
 
 </div>
 
-<!-- ====================== PRODUK 8 LV VERSI LAIN ====================== -->
+<!-- ====================== Apple Watch ====================== -->
 <div class="card">
     <h3>Apple Watch</h3>
 
@@ -719,73 +764,6 @@ h1, h2, h3 {
         <li><p><b>Link Coklat Dubai:</b> <a href="https://id.shp.ee/msvrT5q" target="_blank">Klik di sini</a></p> </li>
     </ul>
 </div>
-
-
-// ===== Fade-in Animation on Scroll =====
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-});
-
-document.querySelectorAll(".card").forEach(card => {
-    observer.observe(card);
-});
-
-// ===== Hover Glow Effect =====
-document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("mouseenter", () => {
-        card.style.boxShadow = "0 0 25px rgba(255, 215, 0, 0.4)";
-    });
-    card.addEventListener("mouseleave", () => {
-        card.style.boxShadow = "";
-    });
-});
-
-// ===== Image Slider Otomatis =====
-document.querySelectorAll(".product-images").forEach((container) => {
-    let index = 0;
-    const images = container.querySelectorAll("img");
-
-    if (images.length > 1) {
-        setInterval(() => {
-            images.forEach(img => img.style.display = "none");
-            images[index].style.display = "block";
-            index = (index + 1) % images.length;
-        }, 2000);
-    }
-});
-
-// ===== Smooth Hover Zoom pada Gambar =====
-document.querySelectorAll(".product-images img").forEach((img) => {
-    img.style.transition = "0.3s ease";
-    img.addEventListener("mouseenter", () => {
-        img.style.transform = "scale(1.12)";
-    });
-    img.addEventListener("mouseleave", () => {
-        img.style.transform = "scale(1)";
-    });
-});
-
-// ===== Dark Mode Toggle =====
-const toggleBtn = document.getElementById("darkModeBtn");
-
-if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-
-        // Simpan preferensi
-        const isDark = document.body.classList.contains("dark");
-        localStorage.setItem("darkMode", isDark ? "on" : "off");
-    });
-}
-
-// Load preferensi dark mode
-if (localStorage.getItem("darkMode") === "on") {
-    document.body.classList.add("dark");
-}
 
 </body>
 </html>
