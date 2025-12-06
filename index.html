@@ -7,62 +7,102 @@
 
     <style>
 /* ========== BASE STYLE ========== */
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-.cover {
-background: #1a1a1a;
-color: white;
-padding: 40px;
-text-align: center;
+body {
+    background: linear-gradient(180deg, #000000, #1a1a1a, #000000);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: 40px 20px;
 }
-.daftar-isi {
-padding: 20px;
+
+/* Box Styling */
+.box {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    margin-bottom: 40px;
+    transition: 0.3s ease-in-out;
 }
-.produk-card {
-border: 1px solid #ccc;
-padding: 20px;
-margin: 20px;
-border-radius: 8px;
+
+.box:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
 }
-.produk-card img {
-width: 250px;
-border-radius: 8px;
+
+/* Title Glow */
+h1, h2, h3 {
+    text-align: center;
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #b8860b;
+    margin-bottom: 25px;
 }
+
+/* Biodata cover */
+.cover-info {
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Daftar Isi */
+.daftar-isi ul {
+    font-size: 18px;
+    line-height: 1.9;
+    padding-left: 25px;
+}
+
+.daftar-isi ul li {
+    padding: 5px 0;
+    transition: 0.2s;
+}
+
+.daftar-isi ul li:hover {
+    color: #ffd700;
+    transform: translateX(5px);
+    cursor: pointer;
+}
+
+/* Halaman agar lebih rapi */
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
 </style>
 
 </head>
 <body>
 
 <!-- ====================== COVER ====================== -->
-<div class="card">
-    <h2>MIRROR Brand</h2>
+<div class="container">
 
-    <p style="text-align:center;">
-        <b>Mata Kuliah:</b> Etika Profesi<br>
-        <b>Nama :</b> Maryesi Telussa<br>
-        <b>NIM :</b> 202351010<br>
-        <b>Dosen Pengampu:</b> Ibu Citra Fathia Palembang, S.Kom., M.Kom.
-    </p>
-</div>
+    <div class="box">
+        <h1>MIRROR Brand</h1>
+        <div class="cover-info">
+            <p><b>Mata Kuliah:</b> Etika Profesi</p>
+            <p><b>Nama:</b> Maryesi Telussa</p>
+            <p><b>NIM:</b> 202351010</p>
+            <p><b>Dosen Pengampu:</b> Ibu Citra Fathia Palembang, S.Kom., M.Kom.</p>
+        </div>
+    </div>
 
-<!-- ====================== DAFTAR ISI ====================== -->
-<div class="card">
-    <h3>Daftar Isi</h3>
-    <ul>
-        <li>1. Tas Balenciaga – Fake vs Real</li>
-        <li>2. Sepatu Nike Air Max</li>
-        <li>3. Sepatu Adidas Samba</li>
-        <li>4. Tas Louis Vuitton</li>
-        <li>5. Tas Wanita Bordir Kotak</li>
-        <li>6. Fujika Tas</li>
-        <li>7. Tas Selempang</li>
-        <li>8. Tas Louis Vuitton (versi lain)</li>
-        <li>9. Scarlett Whitening Perfume</li>
-        <li>10. Coklat “Dubai”</li>
-        <li>11. Dampak Pelanggaran Merek</li>
-        <li>12. Kesimpulan Nasional Fake Brand</li>
-        <li>13. Rekomendasi Solusi Hukum</li>
-        <li>14. Daftar Referensi</li>
-    </ul>
+    <div class="box daftar-isi">
+        <h2>Daftar Isi</h2>
+        <ul>
+            <li>1. Tas Balenciaga – Fake vs Real</li>
+            <li>2. Sepatu Nike Air Max</li>
+            <li>3. Sepatu Adidas Samba</li>
+            <li>4. Tas Louis Vuitton</li>
+            <li>5. Tas Wanita Bordir Kotak</li>
+            <li>6. Fujika Tas</li>
+            <li>7. Tas Selempang</li>
+            <li>8. Tas Louis Vuitton (versi lain)</li>
+            <li>9. Scarlett Whitening Perfume</li>
+            <li>10. Coklat Dubai</li>
+        </ul>
+    </div>
+
 </div>
 
 <!-- ====================== PRODUK 1 BALENCIAGA ====================== -->
